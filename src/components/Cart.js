@@ -1,10 +1,11 @@
 import React from 'react';
+import './Cart.css';
 
 function Cart() {
   return (
-    <div>
-      <h1>Coșul Tău</h1>
-      <p>Aici veți vedea produsele adăugate în coș.</p>
+    <div className="page">
+      <h1>Your Cart</h1>
+      <p>Here you will see the products added to your cart.</p>
     </div>
   );
 }

@@ -1,11 +1,11 @@
 .home {
   position: relative;
-  min-height: 100vh;
+  height: 80vh; 
   overflow: hidden;
 }
 
 #video-bg {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   width: 100%;
@@ -21,9 +21,4 @@
   text-align: center;
   color: white;
   padding-top: 20%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }

@@ -1,9 +1,10 @@
 import React from 'react';
+import './Footer.css';
 
 function Footer() {
   return (
     <footer>
-      <p>&copy; 2023 BatterLife. All rights reserved.</p>
+      <p>&copy; 2025 BatterLife. All rights reserved.</p>
     </footer>
   );
 }

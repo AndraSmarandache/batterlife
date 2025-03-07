@@ -1,16 +1,15 @@
 import React from 'react';
+import './Products.css';
 
 function Products() {
   return (
-    <div>
+    <div className="page">
       <h1>Our Products</h1>
       <div>
         <h2>Cakes</h2>
-        {/* Add cake components here */}
       </div>
       <div>
         <h2>Pastries</h2>
-        {/* Add pastry components here */}
       </div>
     </div>
   );

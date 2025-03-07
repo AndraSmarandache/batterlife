@@ -1,12 +1,15 @@
 import React from 'react';
+import './Contact.css';
 
-function Cart() {
+function Contact() {
   return (
-    <div>
-      <h1>Your Cart</h1>
-      <p>Here you will see the products added to your cart.</p>
+    <div className="page">
+      <h1>Contact Us</h1>
+      <p>You can reach us at:</p>
+      <p>Email: contact@batterlife.com</p>
+      <p>Phone: +40 123 456 789</p>
     </div>
   );
 }
 
-export default Cart;
+export default Contact;

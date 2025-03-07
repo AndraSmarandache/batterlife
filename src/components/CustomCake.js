@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './CustomCake.css'; 
+import './CustomCake.css';
 
 function CustomCake() {
   const [base, setBase] = useState('chocolate');
@@ -19,7 +19,7 @@ function CustomCake() {
   };
 
   return (
-    <div>
+    <div className="page">
       <h1>Customize Your Cake</h1>
       <div>
         <h2>Choose Base</h2>

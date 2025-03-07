@@ -1,8 +1,9 @@
 import React from 'react';
+import './About.css';
 
 function About() {
   return (
-    <div>
+    <div className="page">
       <h1>About Us</h1>
       <p>BatterLife is a bakery dedicated to delicious and personalized treats.</p>
     </div>
