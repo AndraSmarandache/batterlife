@@ -27,7 +27,7 @@ nav a {
 }
 
 nav a:hover {
-  color: white;
+  color: rgb(216, 66, 66);
 }
 
 nav a:last-child {
