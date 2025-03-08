@@ -13,16 +13,20 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/custom-cake" element={<CustomCake />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
-      <Footer />
+      <div className="page-container">
+        <Header />
+        <div className="content-wrap">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/custom-cake" element={<CustomCake />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
     </Router>
   );
 }
