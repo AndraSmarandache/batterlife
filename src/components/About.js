@@ -121,7 +121,7 @@ function About() {
               alt={`Gallery ${currentImageIndex + 1}`}
               className={isFading ? 'fade-out' : ''}
             />
-            <div className="overlay">Image {currentImageIndex + 1}</div>
+            <div className="overlay">Our cakes</div>
           </div>
           <button className="arrow right-arrow" onClick={showPreviousImage}>
             &rarr;
