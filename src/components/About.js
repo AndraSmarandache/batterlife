@@ -123,7 +123,7 @@ function About() {
             />
             <div className="overlay">Image {currentImageIndex + 1}</div>
           </div>
-          <button className="arrow right-arrow" onClick={showNextImage}>
+          <button className="arrow right-arrow" onClick={showPreviousImage}>
             &rarr;
           </button>
         </div>
