@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaSort } from 'react-icons/fa';
 import './Products.css';
 
 function Products() {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [selectedProduct, setSelectedProduct] = useState(null);
   const [sortBy, setSortBy] = useState('name-asc');
   const [isSortOpen, setIsSortOpen] = useState(false);
 
@@ -93,11 +93,7 @@ function Products() {
 
       <div className="product-list">
         {sortedProducts.map(product => (
-          <div
-            key={product.id}
-            className="product-card"
-            onClick={() => setSelectedProduct(product)}
-          >
+          <Link to={`/product/${product.id}`} key={product.id} className="product-card">
             <div className="product-image">
               <img src={product.image} alt={product.name} />
               <div className="overlay">
@@ -108,21 +104,9 @@ function Products() {
             </div>
             <h3>{product.name}</h3>
             <p>${product.price}</p>
-          </div>
+          </Link>
         ))}
       </div>
-
-      {selectedProduct && (
-        <div className="product-details">
-          <div className="details-content">
-            <h2>{selectedProduct.name}</h2>
-            <img src={selectedProduct.image} alt={selectedProduct.name} />
-            <p><strong>Price:</strong> ${selectedProduct.price}</p>
-            <p><strong>Ingredients:</strong> {selectedProduct.ingredients.join(', ')}</p>
-            <button onClick={() => setSelectedProduct(null)}>Close</button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

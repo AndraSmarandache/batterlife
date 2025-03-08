@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Cart from './components/Cart';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ProductDetails from './components/ProductDetails';
 import './App.css';
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/" element={<Products />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/custom-cake" element={<CustomCake />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/cart" element={<Cart />} />
