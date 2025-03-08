@@ -1,5 +1,5 @@
 .products-page {
-  padding-top: 80px;
+  padding-top: 120px;
   padding-left: 20px;
   padding-right: 20px;
   color: white;
@@ -14,11 +14,20 @@ h1 {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
+.filters-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .category-filters {
   display: flex;
-  justify-content: center;
   gap: 10px;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .category-filters button {
@@ -41,21 +50,94 @@ h1 {
 }
 
 .sort-filters {
-  text-align: center;
-  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .sort-filters label {
-  margin-right: 10px;
+  font-size: 1rem;
+  color: white;
 }
 
 .sort-filters select {
-  padding: 5px;
+  padding: 10px;
+  border: none;
   border-radius: 5px;
   background-color: #333;
   color: white;
-  border: none;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 200px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sort-filters select:hover {
+  background-color: #444;
+}
+
+.sort-filters select option {
+  background-color: #333;
+  color: white;
+}
+
+.sort-filters select option:hover {
+  background-color: rgb(216, 66, 66);
+  color: white;
+}
+
+.sort-icon {
+  display: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.sort-dropdown-mobile {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #333;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.sort-dropdown-mobile button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #444;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sort-dropdown-mobile button:hover {
+  background-color: rgb(216, 66, 66);
+}
+
+@media (max-width: 768px) {
+  .sort-filters label,
+  .sort-filters select {
+    display: none;
+  }
+
+  .sort-icon {
+    display: block;
+  }
+
+  .sort-dropdown-mobile {
+    display: block;
+  }
 }
 
 .product-list {

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { FaSort } from 'react-icons/fa';
 import './Products.css';
 
 function Products() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [sortBy, setSortBy] = useState('name');
+  const [sortBy, setSortBy] = useState('name-asc');
+  const [isSortOpen, setIsSortOpen] = useState(false);
 
   const categories = [
     { id: 'all', name: 'All' },
@@ -30,8 +32,10 @@ function Products() {
     : products.filter(product => product.category === selectedCategory);
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
-    if (sortBy === 'name') return a.name.localeCompare(b.name);
-    if (sortBy === 'price') return a.price - b.price;
+    if (sortBy === 'name-asc') return a.name.localeCompare(b.name);
+    if (sortBy === 'name-desc') return b.name.localeCompare(a.name);
+    if (sortBy === 'price-asc') return a.price - b.price;
+    if (sortBy === 'price-desc') return b.price - a.price;
     return 0;
   });
 
@@ -43,24 +47,39 @@ function Products() {
     <div className="products-page">
       <h1>Our Products</h1>
 
-      <div className="category-filters">
-        {categories.map(category => (
-          <button
-            key={category.id}
-            className={selectedCategory === category.id ? 'active' : ''}
-            onClick={() => setSelectedCategory(category.id)}
-          >
-            {category.name}
-          </button>
-        ))}
-      </div>
+      <div className="filters-container">
+        <div className="category-filters">
+          {categories.map(category => (
+            <button
+              key={category.id}
+              className={selectedCategory === category.id ? 'active' : ''}
+              onClick={() => setSelectedCategory(category.id)}
+            >
+              {category.name}
+            </button>
+          ))}
+        </div>
 
-      <div className="sort-filters">
-        <label>Sort by:</label>
-        <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-          <option value="name">Name</option>
-          <option value="price">Price</option>
-        </select>
+        <div className="sort-filters">
+          <label>Sort by:</label>
+          <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+            <option value="name-asc">Name: A-Z</option>
+            <option value="name-desc">Name: Z-A</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+          <div className="sort-icon" onClick={() => setIsSortOpen(!isSortOpen)}>
+            <FaSort />
+          </div>
+          {isSortOpen && (
+            <div className="sort-dropdown-mobile">
+              <button onClick={() => { setSortBy('name-asc'); setIsSortOpen(false); }}>Name: A-Z</button>
+              <button onClick={() => { setSortBy('name-desc'); setIsSortOpen(false); }}>Name: Z-A</button>
+              <button onClick={() => { setSortBy('price-asc'); setIsSortOpen(false); }}>Price: Low to High</button>
+              <button onClick={() => { setSortBy('price-desc'); setIsSortOpen(false); }}>Price: High to Low</button>
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="product-list">
