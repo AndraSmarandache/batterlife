@@ -61,32 +61,62 @@ h1 {
   color: white;
 }
 
-.sort-filters select {
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
   padding: 10px;
   border: none;
   border-radius: 5px;
   background-color: #333;
   color: white;
   cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   width: 200px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.sort-filters select:hover {
+.dropdown-button:hover {
   background-color: #444;
 }
 
-.sort-filters select option {
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
   background-color: #333;
-  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  width: 200px;
 }
 
-.sort-filters select option:hover {
-  background-color: rgb(216, 66, 66);
+.dropdown-content button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #444;
+  border: none;
   color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content button:hover {
+  background-color: #1a1a1aa9;
+}
+
+.custom-dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .sort-icon {
@@ -122,12 +152,12 @@ h1 {
 }
 
 .sort-dropdown-mobile button:hover {
-  background-color: rgb(216, 66, 66);
+  background-color: #1a1a1aa9;
 }
 
 @media (max-width: 768px) {
   .sort-filters label,
-  .sort-filters select {
+  .custom-dropdown {
     display: none;
   }
 

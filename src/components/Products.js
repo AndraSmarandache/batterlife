@@ -62,12 +62,21 @@ function Products() {
 
         <div className="sort-filters">
           <label>Sort by:</label>
-          <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-            <option value="name-asc">Name: A-Z</option>
-            <option value="name-desc">Name: Z-A</option>
-            <option value="price-asc">Price: Low to High</option>
-            <option value="price-desc">Price: High to Low</option>
-          </select>
+          <div className="custom-dropdown">
+            <button className="dropdown-button">
+              {sortBy === 'name-asc' && 'Name: A-Z'}
+              {sortBy === 'name-desc' && 'Name: Z-A'}
+              {sortBy === 'price-asc' && 'Price: Low to High'}
+              {sortBy === 'price-desc' && 'Price: High to Low'}
+              <span>▼</span>
+            </button>
+            <div className="dropdown-content">
+              <button onClick={() => setSortBy('name-asc')}>Name: A-Z</button>
+              <button onClick={() => setSortBy('name-desc')}>Name: Z-A</button>
+              <button onClick={() => setSortBy('price-asc')}>Price: Low to High</button>
+              <button onClick={() => setSortBy('price-desc')}>Price: High to Low</button>
+            </div>
+          </div>
           <div className="sort-icon" onClick={() => setIsSortOpen(!isSortOpen)}>
             <FaSort />
           </div>
