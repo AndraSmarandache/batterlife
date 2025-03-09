@@ -1,0 +1,13 @@
+.page {
+  padding-top: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: black;
+}
+
+.cake-preview {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
