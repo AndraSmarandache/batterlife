@@ -36,19 +36,18 @@
 .product-details-content {
     display: flex;
     align-items: flex-start; 
-    justify-content: space-between; 
     gap: 40px;
-    max-width: 1200px; 
-    margin: 0 auto;
-    text-align: left;
-    padding-bottom: 20px;
+    max-width: 100%;
+    margin: 0; 
+    padding: 0; 
 }
 
 .product-details-image {
-    width: 50%;
-    height: 400px; 
-    object-fit: cover;
+    width: 40%;
+    height: calc(100vh - 250px); 
+    object-fit: cover; 
     border-radius: 10px;
+    align-self: stretch;
 }
 
 .product-info {
