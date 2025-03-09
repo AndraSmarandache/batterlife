@@ -1,5 +1,5 @@
 .products-page {
-  padding-top: 120px;
+  padding-top: 120px; 
   padding-left: 20px;
   padding-right: 20px;
   color: white;
@@ -119,57 +119,6 @@ h1 {
   display: block;
 }
 
-.sort-icon {
-  display: none;
-  font-size: 1.5rem;
-  color: white;
-  cursor: pointer;
-}
-
-.sort-dropdown-mobile {
-  display: none;
-  position: absolute;
-  top: 40px;
-  right: 0;
-  background-color: #333;
-  border-radius: 5px;
-  padding: 10px;
-  z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.sort-dropdown-mobile button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0;
-  background-color: #444;
-  border: none;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.sort-dropdown-mobile button:hover {
-  background-color: #1a1a1aa9;
-}
-
-@media (max-width: 768px) {
-  .sort-filters label,
-  .custom-dropdown {
-    display: none;
-  }
-
-  .sort-icon {
-    display: block;
-  }
-
-  .sort-dropdown-mobile {
-    display: block;
-  }
-}
-
 .product-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -244,12 +193,12 @@ h1 {
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+    text-overflow: ellipsis;
 }
 
 .product-card p {
-  margin: 10px;
-  font-size: 1rem;
-  color: #ccc;
-  text-align: center;
+    margin: 10px;
+    font-size: 1rem;
+    color: #ccc;
+    text-align: center;
 }

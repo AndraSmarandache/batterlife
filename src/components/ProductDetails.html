@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - BatterLife</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ProductDetails.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="BatterLife Logo">
+        </div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="custom-cake.html">Customize Cake</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <main class="product-details-page">
+        <button class="back-button" onclick="history.back()">Back to Products</button>
+
+        <div class="product-details-content fade-in">
+            <img class="product-details-image" src="" alt="">
+
+            <div class="product-info">
+                <h2 class="product-name"></h2>
+                <p class="price"></p>
+                <p class="description"></p>
+                <p class="ingredients"></p>
+                <p class="allergens"></p>
+
+                <div class="quantity-container">
+                    <label for="quantity">Quantity:</label>
+                    <div class="quantity-selector">
+                        <button class="decrease-quantity">-</button>
+                        <input type="number" id="quantity" value="1" min="1">
+                        <button class="increase-quantity">+</button>
+                    </div>
+                </div>
+
+                <button class="add-to-cart-button">Add to Cart</button>
+
+                <div class="section">
+                    <h3>Rating</h3>
+                    <div class="rating">
+                        <span class="product-rating"></span>
+                        <div class="stars"></div>
+                    </div>
+                    <button class="see-reviews-button">See Reviews</button>
+                    <div class="reviews"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="normal-footer">
+        <p>&copy; 2025 BatterLife. All rights reserved.</p>
+    </footer>
+
+    <script src="ProductDetails.js"></script>
+</body>
+</html>
