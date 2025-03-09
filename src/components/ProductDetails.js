@@ -161,7 +161,7 @@ function ProductDetails() {
     <div className="product-details-page fade-in">
       <button onClick={() => navigate(-1)} className="back-button">Back to Products</button>
       <div className="product-details-content">
-        <img src={product.image} alt={product.name} className="product-image" />
+      <img src={product.image} alt={product.name} className="product-details-image" />
         <h2>{product.name}</h2>
         <p><strong>Price:</strong> ${product.price}</p>
         <p><strong>Description:</strong> {product.description}</p>
