@@ -133,7 +133,7 @@ function ProductDetails() {
   const [showReviews, setShowReviews] = useState(false);
 
   useEffect(() => {
-    const selectedProduct = products.find(p => p.id === parseInt(productId));
+    const selectedProduct = products.find((p) => p.id === parseInt(productId));
     if (selectedProduct) {
       setProduct(selectedProduct);
     } else {
@@ -141,85 +141,83 @@ function ProductDetails() {
     }
   }, [productId]);
 
-  const handleAddToCart = () => {
-    alert(`${product.name} (Quantity: ${quantity}) added to cart!`);
-  };
-
   if (!product) {
-    return (
-      <div className="product-details-page">
-        <button onClick={() => navigate(-1)} className="back-button">Back to Products</button>
-        <div className="product-details-content">
-          <h2>Product not found</h2>
-          <p>The product you are looking for does not exist.</p>
-        </div>
-      </div>
-    );
+    return <p>Loading...</p>;
   }
+
+  const handleAddToCart = () => {
+    console.log(`Added ${quantity} of ${product.name} to cart.`);
+  };
 
   return (
     <div className="product-details-page fade-in">
-      <button onClick={() => navigate(-1)} className="back-button">Back to Products</button>
+      <button onClick={() => navigate(-1)} className="back-button">
+        Back to Products
+      </button>
+
       <div className="product-details-content">
-      <img src={product.image} alt={product.name} className="product-details-image" />
-        <h2>{product.name}</h2>
-        <p><strong>Price:</strong> ${product.price}</p>
-        <p><strong>Description:</strong> {product.description}</p>
-        <p><strong>Ingredients:</strong> {product.ingredients.join(', ')}</p>
-        <p><strong>Allergens:</strong> {product.allergens.join(', ')}</p>
+        <img src={product.image} alt={product.name} className="product-details-image" />
 
-        <div className="quantity-container">
-          <label>Quantity</label>
-          <div className="quantity-selector">
-            <button onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}>-</button>
-            <input
-              type="number"
-              value={quantity}
-              onChange={(e) => setQuantity(parseInt(e.target.value))}
-              min="1"
-            />
-            <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
-          </div>
-        </div>
+        <div className="product-info">
+          <h2>{product.name}</h2>
+          <p><strong>Price:</strong> ${product.price}</p>
+          <p><strong>Description:</strong> {product.description}</p>
+          <p><strong>Ingredients:</strong> {product.ingredients.join(', ')}</p>
+          <p><strong>Allergens:</strong> {product.allergens.join(', ')}</p>
 
-        <button
-          onClick={handleAddToCart}
-          className="add-to-cart-button"
-          onMouseEnter={(e) => e.target.classList.add('hover')}
-          onMouseLeave={(e) => e.target.classList.remove('hover')}
-        >
-          Add to Cart
-        </button>
-
-        <div className="section">
-          <h3>Rating</h3>
-          <div className="rating">
-            <span>{product.rating}</span>
-            <div className="stars">
-              {'★'.repeat(Math.floor(product.rating))}
-              {'☆'.repeat(5 - Math.floor(product.rating))}
+          <div className="quantity-container">
+            <label>Quantity</label>
+            <div className="quantity-selector">
+              <button onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}>-</button>
+              <input
+                type="number"
+                value={quantity}
+                onChange={(e) => setQuantity(parseInt(e.target.value))}
+                min="1"
+              />
+              <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
             </div>
           </div>
+
           <button
-            className="see-reviews-button"
-            onClick={() => setShowReviews(!showReviews)}
+            onClick={handleAddToCart}
+            className="add-to-cart-button"
+            onMouseEnter={(e) => e.target.classList.add('hover')}
+            onMouseLeave={(e) => e.target.classList.remove('hover')}
           >
-            {showReviews ? 'Hide Reviews' : 'See Reviews'}
+            Add to Cart
           </button>
-          {showReviews && (
-            <div className="reviews">
-              {product.reviews.map((review) => (
-                <div key={review.id} className="review">
-                  <strong>{review.user}</strong>
-                  <div className="stars">
-                    {'★'.repeat(review.rating)}
-                    {'☆'.repeat(5 - review.rating)}
-                  </div>
-                  <p>{review.comment}</p>
-                </div>
-              ))}
+
+          <div className="section">
+            <h3>Rating</h3>
+            <div className="rating">
+              <span>{product.rating}</span>
+              <div className="stars">
+                {'★'.repeat(Math.floor(product.rating))}
+                {'☆'.repeat(5 - Math.floor(product.rating))}
+              </div>
             </div>
-          )}
+            <button
+              className="see-reviews-button"
+              onClick={() => setShowReviews(!showReviews)}
+            >
+              {showReviews ? 'Hide Reviews' : 'See Reviews'}
+            </button>
+            {showReviews && (
+              <div className="reviews">
+                {product.reviews.map((review) => (
+                  <div key={review.id} className="review">
+                    <strong>{review.user}</strong>
+                    <div className="stars">
+                      {'★'.repeat(review.rating)}
+                      {'☆'.repeat(5 - review.rating)}
+                    </div>
+                    <p>{review.comment}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

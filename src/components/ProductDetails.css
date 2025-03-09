@@ -4,21 +4,22 @@
     background-color: #1a1a1a;
     min-height: 100vh;
     padding-bottom: 20px;
-  }
-  .fade-in {
+}
+
+.fade-in {
     animation: fadeIn 0.5s ease-in-out;
-  }
-  
-  @keyframes fadeIn {
+}
+
+@keyframes fadeIn {
     from {
-      opacity: 0;
+        opacity: 0;
     }
     to {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  
-  .back-button {
+}
+
+.back-button {
     padding: 10px 20px;
     background-color: #555;
     color: white;
@@ -26,25 +27,35 @@
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 20px;
-  }
-  
-  .back-button:hover {
+}
+
+.back-button:hover {
     background-color: #777;
-  }
-  
-  .product-details-content {
-    max-width: 600px;
+}
+
+.product-details-content {
+    display: flex;
+    align-items: flex-start; 
+    justify-content: space-between; 
+    gap: 40px;
+    max-width: 1200px; 
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
     padding-bottom: 20px;
-  }
-  
+}
+
 .product-details-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    width: 50%;
+    height: 400px; 
+    object-fit: cover;
     border-radius: 10px;
-    margin-bottom: 20px;
+}
+
+.product-info {
+    width: 50%; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .product-card img {
@@ -53,25 +64,25 @@
     object-fit: cover;
 }
 
-  .quantity-container {
+.quantity-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
     margin: 20px 0;
-  }
-  
-  .quantity-container label {
+}
+
+.quantity-container label {
     font-size: 1.2rem;
-  }
-  
-  .quantity-selector {
+}
+
+.quantity-selector {
     display: flex;
     align-items: center;
     gap: 10px;
-  }
-  
-  .quantity-selector button {
+}
+
+.quantity-selector button {
     padding: 5px 10px;
     background-color: #555;
     color: white;
@@ -80,14 +91,13 @@
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s ease;
-  }
-  
-  .quantity-selector button:hover {
+}
+
+.quantity-selector button:hover {
     background-color: #777;
-  }
-  
-  .quantity-selector input[type="number"] {
-    -moz-appearance: textfield; 
+}
+
+.quantity-selector input[type="number"] {
     padding: 5px;
     font-size: 1rem;
     width: 60px;
@@ -96,15 +106,15 @@
     border-radius: 5px;
     background-color: #444;
     color: white;
-  }
-  
-  .quantity-selector input[type="number"]::-webkit-outer-spin-button,
-  .quantity-selector input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none; 
+}
+
+.quantity-selector input[type="number"]::-webkit-outer-spin-button,
+.quantity-selector input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
     margin: 0;
-  }
-  
-  .add-to-cart-button {
+}
+
+.add-to-cart-button {
     padding: 10px 20px;
     background-color: white;
     color: #333;
@@ -113,37 +123,36 @@
     cursor: pointer;
     font-size: 1.2rem;
     transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .add-to-cart-button.hover {
+}
+
+.add-to-cart-button:hover {
     background-color: #ddd;
     transform: scale(1.05);
-  }
-  
-  .section {
+}
+
+.section {
     margin-bottom: 20px;
     text-align: left;
-  }
-  
-  .section h3 {
+}
+
+.section h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-  }
-  
-  .rating {
+}
+
+.rating {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px; 
-  }
-  
-  .stars {
+    margin-top: 10px;
+}
+
+.stars {
     color: gold;
     font-size: 1.2rem;
-  }
-  
-  .see-reviews-button {
+}
+
+.see-reviews-button {
     padding: 10px 20px;
     background-color: #555;
     color: white;
@@ -152,26 +161,26 @@
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s ease;
-  }
-  
-  .see-reviews-button:hover {
+}
+
+.see-reviews-button:hover {
     background-color: #777;
-  }
-  
-  .reviews {
+}
+
+.reviews {
     margin-top: 10px;
-  }
-  
-  .review {
+}
+
+.review {
     margin-bottom: 15px;
-  }
-  
-  .review .stars {
+}
+
+.review .stars {
     color: gold;
     font-size: 1rem;
-  }
-  
-  .review p {
+}
+
+.review p {
     margin: 5px 0;
     font-size: 1rem;
-  }
+}
