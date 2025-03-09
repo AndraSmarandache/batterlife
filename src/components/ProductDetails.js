@@ -130,23 +130,31 @@ function ProductDetails() {
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const [totalPrice, setTotalPrice] = useState(0); 
   const [showReviews, setShowReviews] = useState(false);
 
   useEffect(() => {
     const selectedProduct = products.find((p) => p.id === parseInt(productId));
     if (selectedProduct) {
       setProduct(selectedProduct);
+      setTotalPrice(selectedProduct.price * quantity); 
     } else {
       console.error(`Product with ID ${productId} not found.`);
     }
   }, [productId]);
+
+  useEffect(() => {
+    if (product) {
+      setTotalPrice(product.price * quantity);
+    }
+  }, [quantity, product]);
 
   if (!product) {
     return <p>Loading...</p>;
   }
 
   const handleAddToCart = () => {
-    console.log(`Added ${quantity} of ${product.name} to cart.`);
+    console.log(`Added ${quantity} of ${product.name} to cart. Total: $${totalPrice}`);
   };
 
   return (
@@ -160,7 +168,7 @@ function ProductDetails() {
 
         <div className="product-info">
           <h2>{product.name}</h2>
-          <p className="price"><strong>Price:</strong> ${product.price}</p>
+          <p className="price"><strong>Total Price:</strong> ${totalPrice.toFixed(2)}</p> 
           <p><strong>Description:</strong> {product.description}</p>
           <p><strong>Ingredients:</strong> {product.ingredients.join(', ')}</p>
           <p><strong>Allergens:</strong> {product.allergens.join(', ')}</p>
