@@ -160,7 +160,7 @@ function ProductDetails() {
 
         <div className="product-info">
           <h2>{product.name}</h2>
-          <p><strong>Price:</strong> ${product.price}</p>
+          <p className="price"><strong>Price:</strong> ${product.price}</p>
           <p><strong>Description:</strong> {product.description}</p>
           <p><strong>Ingredients:</strong> {product.ingredients.join(', ')}</p>
           <p><strong>Allergens:</strong> {product.allergens.join(', ')}</p>
