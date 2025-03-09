@@ -3,6 +3,7 @@
     color: white;
     background-color: #1a1a1a;
     min-height: 100vh;
+    padding-bottom: 20px; 
   }
   
   .fade-in {
@@ -36,6 +37,7 @@
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
+    padding-bottom: 20px;
   }
   
   .product-image {
@@ -79,7 +81,8 @@
     background-color: #777;
   }
   
-  .quantity-selector input {
+  .quantity-selector input[type="number"] {
+    -moz-appearance: textfield; 
     padding: 5px;
     font-size: 1rem;
     width: 60px;
@@ -88,6 +91,12 @@
     border-radius: 5px;
     background-color: #444;
     color: white;
+  }
+  
+  .quantity-selector input[type="number"]::-webkit-outer-spin-button,
+  .quantity-selector input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; 
+    margin: 0;
   }
   
   .add-to-cart-button {
@@ -121,6 +130,7 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
+    margin-top: 10px; 
   }
   
   .stars {
