@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { FaSort } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import './Products.css';
 
 function Products() {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [selectedProduct, setSelectedProduct] = useState(null);
   const [sortBy, setSortBy] = useState('name-asc');
   const [isSortOpen, setIsSortOpen] = useState(false);
+  const navigate = useNavigate();
 
   const categories = [
     { id: 'all', name: 'All' },
@@ -39,6 +40,10 @@ function Products() {
     return 0;
   });
 
+  const handleProductClick = (productId) => {
+    navigate(`/products/${productId}`); 
+  };
+
   const handleAddToCart = (product) => {
     alert(`${product.name} added to cart!`);
   };
@@ -46,7 +51,6 @@ function Products() {
   return (
     <div className="products-page">
       <h1>Our Products</h1>
-
       <div className="filters-container">
         <div className="category-filters">
           {categories.map(category => (
@@ -59,7 +63,6 @@ function Products() {
             </button>
           ))}
         </div>
-
         <div className="sort-filters">
           <label>Sort by:</label>
           <div className="custom-dropdown">
@@ -90,13 +93,12 @@ function Products() {
           )}
         </div>
       </div>
-
       <div className="product-list">
         {sortedProducts.map(product => (
           <div
             key={product.id}
             className="product-card"
-            onClick={() => setSelectedProduct(product)}
+            onClick={() => handleProductClick(product.id)}
           >
             <div className="product-image">
               <img src={product.image} alt={product.name} />
@@ -111,18 +113,6 @@ function Products() {
           </div>
         ))}
       </div>
-
-      {selectedProduct && (
-        <div className="product-details">
-          <div className="details-content">
-            <h2>{selectedProduct.name}</h2>
-            <img src={selectedProduct.image} alt={selectedProduct.name} />
-            <p><strong>Price:</strong> ${selectedProduct.price}</p>
-            <p><strong>Ingredients:</strong> {selectedProduct.ingredients.join(', ')}</p>
-            <button onClick={() => setSelectedProduct(null)}>Close</button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
