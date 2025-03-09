@@ -1,9 +1,9 @@
 const galleryImages = [
-  'images/cakes-gallery.jpg',
-  'images/gallery3.jpg',
-  'images/gallery4.jpg',
-  'images/gallery5.jpg',
-  'images/gallery6.jpg'
+  '../images/cakes-gallery.jpg',
+  '../images/gallery3.jpg',
+  '../images/gallery4.jpg',
+  '../images/gallery5.jpg',
+  '../images/gallery6.jpg'
 ];
 
 let currentImageIndex = 0;

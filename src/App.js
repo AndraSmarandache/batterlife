@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/About';
-import Products from './components/Products'; 
-import CustomCake from './components/CustomCake';
-import Contact from './components/Contact';
-import Cart from './components/Cart';
-import ProductDetails from './components/ProductDetails';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Home from './components/js/Home';
+import About from './components/js/About';
+import Products from './components/js/Products'; 
+import CustomCake from './components/js/CustomCake';
+import Contact from './components/js/Contact';
+import Cart from './components/js/Cart';
+import ProductDetails from './components/js/ProductDetails';
+import Header from './components/js/Header';
+import Footer from './components/js/Footer';
 import './App.css';
 
 function App() {
